@@ -1,0 +1,98 @@
+div.abonamente-container {
+	font-size: 25px;
+}
+
+div.abonamente-container div.credit-abonamente h2 {
+ 	color: brown;
+	font-size: 25px;
+	margin-top: 30px;
+}
+
+div.abonamente-container div.format-abonament select {
+	font-size: 17px;
+	border-radius: 8px;
+	padding: 5px
+}
+
+div.abonamente-container div.abonament select {
+	font-size: 17px;
+	border-radius: 8px;
+	padding: 5px;
+}
+
+div.abonamente-container div.select select {
+	font-size: 17px;
+	border-radius: 8px;
+	padding: 3px;
+}
+
+div.abonamente-container div.data-abonament input {
+	font-size: 15px;
+	border-radius: 8px;
+	padding: 3px;
+}
+
+div.abonamente-container div.cod-abonament input {
+	background-color: #006600;
+	color: #b3d9ff;
+	width: 300px;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 10px;
+	margin-left: 50px;
+	margin-bottom: 5px;
+}
+
+div.abonamente-container div.cod-abonament input:hover {
+	color: white;
+}
+
+
+div.abonamente-container div.autobuz img {
+	float: right;
+	margin-top: 100px;
+	margin-right: 20px;
+}
+
+div.abonamente-container div.link-tabel a {
+	font-weight: bold;
+	float: right;
+	margin-left: 400px;
+	margin-right: 80px;
+	margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 1000px) {
+	div.abonamente-container div.autobuz img  {
+		max-width: 30%;
+		height: auto;
+		margin: 10px 20px 0 0;
+	}
+}	
+
+@media only screen and (max-width: 800px) {
+	div.abonamente-container div.autobuz img  {
+		max-width: 90%;
+		height: auto;
+		margin: 10px 20px 0 0;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	div.abonamente-container {
+		font-size: 23px;
+		
+	}
+
+	div.abonamente-container div.credit-abonamente h2 {
+		font-size: 21px;
+	}
+
+	div.abonamente-container div.cod-abonament input {
+		margin-left: 0;
+		width: 260px;
+	}
+}
+

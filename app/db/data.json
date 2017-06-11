@@ -1,0 +1,26 @@
+[{
+	"nume": "Pasare",
+	"prenume": "Catalin",
+	"cnp": "123456789",
+	"sex": "masculin",
+	"stare": "necasatorit",
+	"telefon": "987654321",
+	"email": "dummy_cata@yahoo.com",
+	"adresa": "Stefan cel Mare",
+	"localitate": "Bacau",
+	"judet": "Bacau",
+	"tara": "Romania"
+},
+{
+	"nume": "Pruteanu",
+	"prenume": "Edmond",
+	"cnp": "987654321",
+	"sex": "masculin",
+	"stare": "necasatorit",
+	"telefon": "123456789",
+	"email": "edmondpr@gmail.com",
+	"adresa": "Stefan cel Mare",
+	"localitate": "Bacau",
+	"judet": "Bacau",
+	"tara": "Romania"
+}]

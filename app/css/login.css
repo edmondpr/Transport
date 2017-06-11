@@ -1,0 +1,109 @@
+
+/* Login */
+
+div.login-container {
+	max-width: 100vw;
+	height: 100vw;
+	min-height: 100vh;
+	max-height: 100vh;
+	background-color: lightgrey;
+	background-image: url("../images/travel1.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+	text-align: center;
+}
+
+div.login-container h1 {
+	margin: 10px 50px;
+	background-color: orange;
+	border-radius: 200px;
+	font-weight: 900;
+	font-size: 50px;
+    text-transform: uppercase;
+	color: #009A9A;
+	text-align: center;
+}
+
+div.login-border {
+	background-color: #aaeeae;
+	margin: 70px 40px 0 40px;
+	padding: 20px;
+	border-radius: 50px;
+	opacity: 0.8;
+}
+
+div.login-container form {
+	font-size: 19px;
+	color: white;
+	margin-top: 40px;
+}	
+
+div.login-container input {
+	width: 210px;
+	height: 30px;
+	padding-left: 7px;
+}
+
+div.login-container div.error {
+	width: 200px;
+	background: red;
+	color: white;
+	margin-top: 15px;
+	padding: 10px;
+	font-size: 12px;
+	display: none;
+}
+
+div.link-container {
+	margin-top: 35px;
+}
+
+div.link-container a {
+	background-color: black;
+	border-radius: 200px;
+	color: grey;
+	font-weight: bold;
+	font-size: 25px;
+	text-decoration: none;
+	padding: 10px 30px;
+}
+
+div.link-container a:hover {
+	color: lightgrey;
+}
+
+div.parola {
+	margin-top: 15px;
+	margin-left: 60px;
+	font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+	div.login-border {
+		margin: 60px 15px 100px 15px;
+		height: 270px;
+		width: 200px;
+		padding: 25px;
+		border-radius: 20px;
+	}
+
+	div.login-container h1 {
+		font-size: 22px;
+		margin: 0;
+	}
+
+	div.login-container input {
+		width: 185px;
+	}
+
+	div.login-container div.error {
+		width: 180px;
+
+	}
+}
+
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reset Password</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/login.css"/>
+	<link rel="stylesheet" href="css/menu.css"/>
+	<link rel="stylesheet" href="css/reset.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/resetpassword.js"></script>
+</head>
+<body>
+<div class="bilete-autobuz">
+	<div class="header">
+		<h1>Reseteaza Parola</h1>
+	</div>
+	<div class="reset-container">
+		<div class="reset-text">
+			<p>Introduceti Parola Noua:</p>
+		</div>
+		<div class="reset">
+		<form>
+			<input id="password" type="password" name="password" placeholder="New Password" onkeydown="hideError()">
+			<div class="invalid">
+			Datele introduse sunt incorecte!
+			</div>
+		</div>
+		<div class="reset-text">
+			<p>Confirmati Parola Noua:</p>
+		</div>
+		<div class="confpsw">
+			<input id="password2" type="password" name="password" placeholder="Confirm Password" onkeydown="hideError()">
+			<div class="invalid">
+			Datele introduse sunt incorecte!
+			</div>
+		</form>
+		</div>
+		<div class="confirm">
+			<input id="submit" type="submit" value="Confirm">
+		</div>
+	</div>
+	<div class="footer">
+		<p>Calatorind Cu Tehnologia</p>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/login.css"/>
+	<link rel="stylesheet" href="css/menu.css"/>
+	<link rel="stylesheet" href="css/email.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/emailconfirm.js"></script>
+</head>
+<body>
+<div class="bilete-autobuz">
+	<div class="header">
+		<h1>Reseteaza Parola</h1>
+	</div>
+	<div class="email-container">
+		<div class="email-text">
+			<p>Introduceti Adresa De Email:</p>
+		</div>
+		<div class="normal-spacing"></div>
+		<div class="email">
+		<form>
+			<input id="email" type="email" name="email" placeholder="Email" onkeydown="hideError()">
+			<div class="invalid">
+			Datele introduse sunt incorecte!
+			</div>
+		</form>
+		</div>
+		<div class="go">
+			<input id="reset" type="submit" value="Submit">
+		</div>
+	</div>
+	<div class="footer">
+		<p>Calatorind Cu Tehnologia</p>
+	</div>
+</div>
+</body>
+</html>

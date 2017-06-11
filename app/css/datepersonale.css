@@ -1,0 +1,87 @@
+div.informatii-container {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding: 8px;
+	overflow: hidden;
+}
+
+div.informatii-container div.informatii {
+	width: 350px;
+	font-size: 20px;
+	text-align: center;
+}
+
+div.informatii-container div.informatii div.row {
+	margin-bottom: 3px;
+}
+
+
+div.informatii-container div.informatii div.label {
+	width: 150px;
+	padding: 5px;
+}
+
+div.informatii-container div.informatii form input {
+	padding: 8px;
+	background-color: #222222;
+	color: white;
+}
+div.informatii-container div.informatii form select {
+	padding: 8px;
+	background-color: #222222;
+	color: #BBBBC2;
+}
+div.informatii-container div.error {
+	width: 250px;
+	background: red;
+	color: white;
+	margin-top: 10px;
+	margin-left: 120px;
+	margin-bottom: 10px;
+	padding: 10px;
+	font-size: 15px;
+	display: none;
+
+	
+}
+div.informatii-container div.invalid {
+	color: red;
+	font-weight: bold;
+	font-size: 15px;
+	display: none;
+}
+
+div.informatii-container div.informatii div.buton-date input {
+	background-color: #006600;
+	color: #b3d9ff;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 3px;
+	margin-left: 157px;
+	width: 350px;
+}
+
+div.informatii-container div.informatii div.buton-date input:hover {
+	color: white;
+}
+
+
+@media only screen and (max-width: 600px) {
+	div.informatii-container {
+		float: left;
+		width: 227px;
+		padding-left: 10px;
+		margin-left: 8px;
+	} 
+
+	div.informatii-container div.informatii {
+		width: 190px;
+	}
+
+	div.informatii-container div.informatii div.buton-date input {
+		margin-left: -30px;
+		width: 245px;
+	}
+}

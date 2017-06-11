@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Informatii Personale</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="css/menu.css"/>
+	<link rel="stylesheet" href="css/datepersonale.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/datepersonale.js"></script>
+</head>
+<body>
+<div class="bilete-autobuz">
+	<div class="header">
+		<h1>Informatii Personale</h1>
+	</div>
+	<div class="nav">
+		<a href="datepersonale.html" target="_self">Date Personale</a><br>
+		<a href="bilete.html" target="_self">Bilete</a><br>
+		<a href="abonamente.html" target="_self">Abonamente</a><br>
+		<a href="" target="_self">Informatii</a><br>
+	</div>
+	<div class="informatii-container" align="center">	
+		<div class="informatii">
+			<form onsubmit="return Validate()">
+				<div class="row">
+					<div class="left label" align="left">	
+						Nume:
+					</div>
+					<div class="left" align="left">
+						<input id="nume" type="text" name="firstname" placeholder="Numele" onkeydown="hideError()">
+						
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="row">	
+					<div class="left label" align="left">
+						Prenume:
+					</div>
+					<div class="left" align="left">
+						<input id="prenume" type="text" name="lastname" placeholder="Prenumele" onkeydown="hideError()">
+						
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="row">	
+					<div class="left label" align="left">
+						CNP:
+					</div>
+					<div class="left" align="left">
+						<input type="number" name="codnumeric" placeholder="CNP" onkeydown="hideError()">
+						
+					</div>
+					<div class="clear"></div>
+				</div>	
+				<div class="row">
+					<div class="left label" align="left">
+						Sex:
+					</div>
+					<div class="left" align="left">
+						<select name="sex" onkeydown="hideError()">
+							<option value="masculin">Masculin</option>
+							<option value="feminin">Feminin</option>
+						</select>
+						
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="row">	
+					<div class="left label" align="left">
+						Stare Civila:
+					</div>
+					<div class="left" align="left">
+						<input type="text" name="starecivila" placeholder="Starea Civila" onkeydown="hideError()">
+						
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="row">	
+					<div class="left label" align="left">
+						Numar de telefon:
+					</div>
+					<div class="left" align="left">
+						<input type="tel" name="numartelefon" placeholder="Numarul de telefon" onkeydown="hideError()">
+						
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="row">	
+					<div class="left label" align="left">
+						Adresa de email:
+					</div>
+					<div class="left" align="left">
+						<input type="email" name="adresaemail" placeholder="Email" onkeydown="hideError()">
+						
+					</div>
+					<div class="clear"></div>
+				</div>	
+				<div class="row">	
+					<div class="left label" align="left">
+						Adresa:
+					</div>
+					<div class="left" align="left">
+						<input type="text" name="adresa" placeholder="Adresa" onkeydown="hideError()">
+						
+					</div>
+					<div class="clear"></div>
+				</div>	
+				<div class="row">	
+					<div class="left label" align="left">
+						Localitate:
+					</div>
+					<div class="left" align="left">
+						<input type="text" name="localitate" placeholder="Localitatea" onkeydown="hideError()">
+						
+					</div>
+					<div class="clear"></div>
+				</div>	
+				<div class="row">	
+					<div class="left label" align="left">
+						Judetul:
+					</div>
+					<div class="left" align="left">
+						<input type="text" name="judet" placeholder="Judetul" onkeydown="hideError()">
+						
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="row">	
+					<div class="left label" align="left">
+						Tara de origine:
+					</div>
+					<div class="left" align="left">
+						<input type="text" name="tara" placeholder="Tara de origine" onkeydown="hideError()">
+						
+					</div>
+					<div class="clear"></div>
+				</div>
+			</form>
+			<div class="error">
+			Eroare in introducerea datelor!
+			</div>
+			<div class="buton-date">
+				<input id="submit" type="submit" value="Salveaza Date Personale">
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>Calatorind Cu Tehnologia</p>
+	</div>
+</body>
+</html>

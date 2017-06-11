@@ -1,0 +1,15 @@
+div.left {
+	float: left;
+}
+
+div.clear {
+	clear: both;
+}
+
+div.normal-spacing {
+	height: 20px;
+}
+
+div.large-spacing {
+	height: 30px;
+}
