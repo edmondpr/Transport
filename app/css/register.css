@@ -3,8 +3,8 @@
 		border: 2px solid #188AE2;
 		border-radius: 10px;
 		color: white;
-		font-size: 20px;
-		padding: 10px 90px;
+		font-size: 14px;
+		padding: 10px 20px;
 		text-decoration: none; 
 	}
 
@@ -24,9 +24,10 @@
 		color:#6A6C6F;
 		font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 14px;
+        padding-left: 20px;
 		position: relative;
 		left: 100px;
-		text-align: center;
+		text-align: left;
 		width: 900px;
 	}
 
@@ -52,7 +53,7 @@
 	}
 
 	input {
-		margin-top: 5px;
+		margin-left: 10px;
 		padding: 5px;
 		width:250px;
 	}
