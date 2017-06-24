@@ -1,15 +1,15 @@
 	a {
-		background-color:#EDF0F5;
-		border: 2px solid #2E3F51;
+		background-color:#188AE2;
+		border: 2px solid #188AE2;
 		border-radius: 10px;
-		color: #2E3F51;
+		color: white;
 		font-size: 20px;
 		padding: 10px 90px;
 		text-decoration: none; 
 	}
 
 	a:hover {
-		background-color: #2E3F51;
+		background-color: #1576C2;
 		color: white;
 	}
 
@@ -17,6 +17,17 @@
 		background-color: #EDF0F5;
 		font-size: 20px;
 		text-align: center;
+	}
+
+	.content {
+		background-color: white;
+		color:#6A6C6F;
+		font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 14px;
+		position: relative;
+		left: 100px;
+		text-align: center;
+		width: 900px;
 	}
 
 
@@ -41,10 +52,9 @@
 	}
 
 	input {
+		margin-top: 5px;
 		padding: 5px;
 		width:250px;
 	}
 
-	legend {
-		font-weight: bold;
-	}
+	
