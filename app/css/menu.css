@@ -1,11 +1,11 @@
 body, html {
-	background-color: #e6fff9;
+	background-color: #EDF0F5;
 	margin-top: 5px;
 }
 div.header h1 {
 	font-family: Times, serif;
-	background-color: #001f4d;
-	color: #e6b800;
+	background-color: #188AE2;
+	color: #F1F8FD;
 	font-size: 25px;
 	text-align: center;
 	padding: 20px;
@@ -49,8 +49,8 @@ div.header h1 {
 div.footer {
 	font-size: 20px;
 	font-family: Times, serif;
-	background-color: #001f4d;
-	color: #e6b800;
+	background-color: #188AE2;
+	color: #F1F8FD;
 	clear: both;
 	text-align: center;
 	padding: 3px;
