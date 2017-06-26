@@ -1,5 +1,6 @@
 body.register-body {
 	background-color: #EDF0F5;
+	text-align: center;
 }
 
 div.register-container {
@@ -13,7 +14,7 @@ div.register-container h2.titlu {
 	color: #333;
 	font-size: 15px;
 	margin-bottom: 22px;
-	padding-bottom: 16px;
+	padding: 16px;
 	border-bottom: solid 1px #eee;
 }
 
@@ -38,14 +39,15 @@ div.register-container form.register-form {
 	color: #6A6C6F;
 	font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
-    padding: 20px;
-	position: relative;
-	left: 100px;
 	text-align: right;
-	width: 450px;	
-	border:1px solid transparent;
-	margin-top: 170px;
-	margin-left: 190px;
+	width: 450px;
+	height: 400px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 div.register-container input {
