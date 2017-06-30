@@ -52,6 +52,7 @@ div.register-container form.register-form {
 
 div.register-container input {
 	margin-left: 10px;
+	margin-right: 10px;
 	padding: 5px;
 	width: 250px;
 	font-size: 13px;

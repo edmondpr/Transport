@@ -1,20 +1,44 @@
 div.bilete-container {
-	font-size: 25px;
+	font-size: 10px;
 	color: #8E8F92;
 }
 
-div.bilete-container a {
+div.bilete-container div.nav a {
 	color:#8E8F92;
+	padding: 0;
+	margin:0;
+	font-size: 20px;
+	font-weight: normal;
 }
 
-div.bilete-container a:hover {
+div.bilete-container div.header-bilete {
+	background-color: #188AE2;
+	color: white;
+	padding: 15px;
+	text-align: center;
+	width: 100%;
+}
+
+div.footer-bilete {
+	background-color: #188AE2;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 15px;
+	text-align: center;
+	width: 100%;
+}
+
+div.bilete-container div.nav a:hover {
 	color:#2490E3;
+	border-radius: 0;
 	background-color: #F6F7FA;
+	padding: 0;
 }
 
 div.bilete-container div.credit-bilete h2 {
 	font-size: 25px;
-	color: brown;
+	color: #333333;
 	margin-bottom: 30px;
 }
 
@@ -35,7 +59,7 @@ div.bilete-container img {
 
 div.bilete-container div.pret-bilete p {
 	font-weight: bold;
-	color: green;
+	color: #333333;
 	font-size: 20px;
 	margin-left: 30px;
 }
@@ -52,13 +76,12 @@ div.bilete-container div.bus-mobile {
 div.bilete-container div.cod-bilete input {
 	background-color: #2EFE64;
 	color: white;
-	width: 250px;
 	font-size: 15px;
 	font-weight: bold;
 	padding: 10px;
 	border-radius: 10px;
-	margin-left: 50px;
 	margin-bottom: 5px;
+	width: 250px;
 }
 
 div.bilete-container div.cod-bilete input:hover {
@@ -66,47 +89,50 @@ div.bilete-container div.cod-bilete input:hover {
 	cursor: pointer;
 }
 
-div.container-mare {
-	border:1px solid transparent;
-	border-radius: 5px;
+div.bilete-container div.container-mare {
+	border:1px solid grey;
 	box-shadow: 2px 2px 3px grey;
 	background-color: white;
-	position: absolute;
-	padding: 20px;
-	right: 90px;
-	top: 130px;
-	width: 600px;
+	margin: 20px;
 }
 
-div.nav {
+div.bilete-container div.nav {
 	background-color: white;
 	color: #8E8F92;
 	box-shadow: 2px 2px 3px grey;
 	border:1px solid transparent;
-	padding: 10px;
-	margin: 20px;
+	height: 445px;
+	margin-right: 20px;
 }
 
-@media only screen and (max-width: 600px) {
-	div.bilete-container div.bus-desktop {
-		display: none;
+div.container-mare .buton-bilete {
+	padding-bottom: 30px;
+}
+
+div.container-mare {
+	height: 520px;
+	width: 1000px;
+}
+
+@media only screen and (max-width: 500px) {
+	div.bilete-container {
+		width: 100%;
+		margin-left: 0;
+	}
+	div.bilete-container div.container-mare {
+		width: 100%;
 	}
 
-	div.bilete-container div.bus-mobile {
-		display: block;
+	div.bilete-container div.nav {
+		width: 50%;
 	}
 
-	div.bilete-container img  {
-		margin: 10px 20px 0 0;
-		width: 200px;
-
-	}
-
-	div.bilete-container div.credit-bilete h2 {
-		font-size: 22px;
+	div.container-mare .buton-bilete {
+		position:relative;
+		bottom: 5px;
+		padding: 0;
 	}
 
 	div.bilete-container div.cod-bilete input {
-		margin-left: 13px;
+		width: 30%;
 	}
-}	
