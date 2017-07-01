@@ -6,8 +6,7 @@ div.login-container {
 	height: 100vw;
 	min-height: 100vh;
 	max-height: 100vh;
-	background-color: lightgrey;
-	background-image: url("../images/travel1.jpg");
+	background-color: #EDF0F5;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
@@ -17,26 +16,29 @@ div.login-container {
 
 div.login-container h1 {
 	margin: 10px 50px;
-	background-color: orange;
-	border-radius: 200px;
+	background-color: #188AE2;
+	border-radius: 0px;
 	font-weight: 900;
 	font-size: 50px;
-    text-transform: uppercase;
-	color: #009A9A;
+    text-transform: none;
+	color: #FFFFFF;
 	text-align: center;
+	box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.75);
 }
 
 div.login-border {
-	background-color: #aaeeae;
+	background-color: #fff;
 	margin: 70px 40px 0 40px;
-	padding: 20px;
-	border-radius: 50px;
+	padding: 80px;
+	border-radius: 0px;
 	opacity: 0.8;
+	box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.75);
 }
 
 div.login-container form {
 	font-size: 19px;
-	color: white;
+	color: black;
+	text-align: center;
 	margin-top: 40px;
 }	
 
@@ -56,28 +58,30 @@ div.login-container div.error {
 	display: none;
 }
 
+div.parola {
+	margin-top: 0px;
+	margin-left: 100px;
+	font-weight: bold;
+}
+
 div.link-container {
 	margin-top: 35px;
 }
 
 div.link-container a {
-	background-color: black;
-	border-radius: 200px;
-	color: grey;
+	width: 200px;
+	background-color: #188AE2;
+	border-radius: 3px;
+	color: black;
 	font-weight: bold;
-	font-size: 25px;
+	font-size: 15px;
 	text-decoration: none;
-	padding: 10px 30px;
+	padding: 10px;
+	box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.75);
 }
 
 div.link-container a:hover {
 	color: lightgrey;
-}
-
-div.parola {
-	margin-top: 15px;
-	margin-left: 60px;
-	font-weight: bold;
 }
 
 @media only screen and (max-width: 600px) {
