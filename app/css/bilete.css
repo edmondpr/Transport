@@ -91,4 +91,13 @@ div.bilete-container div.cod-bilete h3 {
 }
 
 
+@media screen and (max-width: 490px) {
+	div.bilete-container div.nav {
+		display: none;
+	}
+
+	div.bilete-container div.container-mare {
+		margin-left: -140px;
+	}
+}
 
