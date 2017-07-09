@@ -1,44 +1,65 @@
-div.bilete-container {
-	font-size: 10px;
-	color: #8E8F92;
+body.body-bilete {
+	background-color: #EDF0F5;
 }
 
-div.bilete-container div.nav a {
-	color:#8E8F92;
-	padding: 0;
-	margin:0;
-	font-size: 20px;
-	font-weight: normal;
+div.bilete-container {
+	font-size: 10px;
+	color: #5F798C;
+}
+
+div.bilete-container div.container-mare {
+	box-shadow: 0 2px #E2E4E8;
+	background-color: white;
+	padding:25px;
+	position:absolute;
+	top:70px;
+	right:35px;
+	left:230px;
+	bottom: 120px;
+	margin:70px;
 }
 
 div.bilete-container div.header-bilete {
 	background-color: #188AE2;
 	color: white;
-	padding: 15px;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 10px;
 	text-align: center;
 	width: 100%;
+	margin-bottom:30px;
 }
 
-div.footer-bilete {
-	background-color: #188AE2;
-	color: white;
+div.bilete-container div.nav {
+	background-color: white;
+	color: #8E8F92;
+	box-shadow: 0 2px #E2E4E8;
+	margin-right: 10px;
+	width: 200px;
+	height: 100%;
+	position:fixed;
+	left:0;
+	top:0;
+	padding-top:180px;
+}
+
+div.bilete-container div.nav a {
+	color:#739093;
 	font-size: 20px;
-	font-weight: bold;
-	padding: 15px;
-	text-align: center;
-	width: 100%;
+	font-weight: normal;
+	text-decoration: none;
+	margin-left: 10px;
 }
 
 div.bilete-container div.nav a:hover {
 	color:#2490E3;
-	border-radius: 0;
 	background-color: #F6F7FA;
-	padding: 0;
+	display: block;
 }
 
 div.bilete-container div.credit-bilete h2 {
 	font-size: 25px;
-	color: #333333;
+	color: #333959;
 	margin-bottom: 30px;
 }
 
@@ -52,87 +73,22 @@ div.bilete-container form input {
 	margin: 10px 0 10px 0;
 }
 
-div.bilete-container img {
-	float: right;
-	margin: 50px 20px 0 50px;
-}
-
-div.bilete-container div.pret-bilete p {
-	font-weight: bold;
-	color: #333333;
-	font-size: 20px;
-	margin-left: 30px;
-}
-
-div.bilete-container div.bus-desktop {
-	overflow: hidden;
-	display: block;
-}
-
-div.bilete-container div.bus-mobile {
-	display: none;
-}
-
-div.bilete-container div.cod-bilete input {
-	background-color: #2EFE64;
-	color: white;
-	font-size: 15px;
-	font-weight: bold;
-	padding: 10px;
-	border-radius: 10px;
-	margin-bottom: 5px;
-	width: 250px;
-}
-
 div.bilete-container div.cod-bilete input:hover {
-	background-color: #10C469;
+	background-color: #0174DF;
 	cursor: pointer;
 }
 
-div.bilete-container div.container-mare {
-	border:1px solid grey;
-	box-shadow: 2px 2px 3px grey;
-	background-color: white;
-	margin: 20px;
+div.bilete-container div.cod-bilete input {
+	background-color: #188AE2;
+	color: white;
+	padding: 10px;
+	font-weight: bold;
 }
 
-div.bilete-container div.nav {
-	background-color: white;
-	color: #8E8F92;
-	box-shadow: 2px 2px 3px grey;
-	border:1px solid transparent;
-	height: 445px;
-	margin-right: 20px;
+div.bilete-container div.cod-bilete h3 {
+	font-size: 20px;
+	color: #333959;
 }
 
-div.container-mare .buton-bilete {
-	padding-bottom: 30px;
-}
 
-div.container-mare {
-	height: 520px;
-	width: 1000px;
-}
 
-@media only screen and (max-width: 500px) {
-	div.bilete-container {
-		width: 100%;
-		margin-left: 0;
-	}
-	div.bilete-container div.container-mare {
-		width: 100%;
-	}
-
-	div.bilete-container div.nav {
-		width: 50%;
-	}
-
-	div.container-mare .buton-bilete {
-		position:relative;
-		bottom: 5px;
-		padding: 0;
-	}
-
-	div.bilete-container div.cod-bilete input {
-		width: 30%;
-	}
