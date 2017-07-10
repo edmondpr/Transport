@@ -15,37 +15,25 @@ div.login-container {
 	margin: 0;
 }
 
-/*div.login-container h1 {
-	margin: 10px 50px;
-	background-color: #188AE2;
-	border-radius: 0px;
-	font-weight: 900;
-	font-size: 50px;
-    text-transform: none;
-	color: #FFFFFF;
-	text-align: center;
-	box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.75);
-	position: center;
-    }*/
     h4.titlu {
     text-align: left;
     color: #333;
     font-family: arial,sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    margin: 0;
+    margin: 0px;
     padding: 0px;
-    line-height: 1.1;
+    line-height: 2.1;
     border-bottom: solid 1px #EEE;
 
 }
 
 div.login-container div.login-content {
 	background-color: #fff;
-	margin: auto; /*70px 40px 0 40px*/
-	padding: 50px;
-	border-radius: 0px;
-	box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.75);
+	margin: auto; 
+	padding: 15px;
+	border-radius: 1px;
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0, 0.68);
 	position: absolute;
 	width: 350px;
     height: 300px;
@@ -57,18 +45,22 @@ div.login-container div.login-content {
 }
 
 div.login-container form {
-	font-family: Raleway,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 19px;
+	font-family: arial, sans-serif;
+	font-size: 12px;
 	color: #6A6C6F;
-	text-align: center;
+	font-weight: 500;
+	text-align: left;
 	margin-top: 40px;
+
 }	
 
 div.login-container input {
-	width: 210px;
+	width: 340px;
 	height: 30px;
 	padding-left: 7px;
 	margin-top: 5px;
+	border-radius: 1px;
+	opacity: 0px;
 }
 
 div.login-container div.error {
@@ -84,27 +76,32 @@ div.login-container div.error {
 div.login-container div.uitat-parola {
 	margin-top: 0px;
 	margin-left: 100px;
-	font-weight: bold;
+	font-weight: normal;
+	font-size: 12px;
+	padding-right: 0px;
+	padding-left: 120px;
+	color: #ccc;
 }
 
 div.login-container div.link-container {
 	margin-top: 35px;
+	padding-right: 300px;
 }
 
 div.login-container div.link-container a {
 	width: 200px;
 	background-color: #188AE2;
-	border: 2px solid #188AE2;
-	border-radius: 10px;
+	border-radius: 5px;
 	color: white;
 	font-weight: normal;
 	font-size: 14px;
 	text-decoration: none;
 	padding: 10px 20px;
+
 }
 
 div.login-container div.link-container a:hover {
-	color: lightgrey;
+	color: white;
 	background-color: #1576c2;
 }
 
