@@ -4,6 +4,7 @@ Route::group([
     'middleware' => ['cors', 'api'],
 ], function () {
     Route::post('/auth/token/issue', 'AuthController@issueToken');
+    Route::post('/auth/signup', 'AuthController@signUp');
     Route::post('/auth/token/refresh', 'AuthController@refreshToken');
 
     Route::group([

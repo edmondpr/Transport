@@ -20,6 +20,11 @@ export const postLogin = ({ email, password }) =>
    */
  .then(getData) // .then(response => getData(response))
 
+ export const postSignUp = ({name, email, password }) =>
+   http.post('/auth/signup', {name, email, password })
+  .then(getData) // .then(response => getData(response))
+
+
 // get current user's data
 export const loadUserData = () => http.get('/me').then(getData)
 

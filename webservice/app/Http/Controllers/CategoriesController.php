@@ -46,6 +46,8 @@ class CategoriesController extends ApiController
         return $this->response->withCreated($category);
     }
 
+    
+
     /**
      * Display the specified resource.
      *

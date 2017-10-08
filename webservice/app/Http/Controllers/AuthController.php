@@ -64,7 +64,12 @@ class AuthController extends ApiController
 
         return $this->response->json(compact('token', 'token_ttl', 'user'));
     }
+    public function signUp(User $request)
+    {
+        $user = Users::create($request->all());
 
+        return $this->response->withCreated($user);
+    }
     /**
      * Return error message after determining invalid credentials.
      *

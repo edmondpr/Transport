@@ -14,6 +14,10 @@ export const attemptLogin = ({ dispatch }, payload) =>
       return user // keep promise chain
     })
 
+export const attemptSignUp = ({dispatch}, payload)=>
+    services.postSignUp(payload)
+    .then(( data ) => { console.log(data);})
+
 export const logout = ({ dispatch }) => {
   services.revokeToken()
   // call actions
