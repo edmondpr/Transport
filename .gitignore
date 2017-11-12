@@ -1,5 +1,6 @@
 
 npm-debug.log
+server/node_modules
 
 .vscode/launch.json
 .idea
