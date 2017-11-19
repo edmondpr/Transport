@@ -1,8 +1,12 @@
-div.left {
+body {
+	font-family: Arial;
+}
+
+.left {
 	float: left;
 }
 
-div.right {
+.right {
 	float: right;
 }
 

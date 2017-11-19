@@ -11,13 +11,12 @@ div.login-container {
 	background-position: center center;
 	background-attachment: fixed;
 	background-size: 400px; 
-	text-align: center;
 	margin: 0;
 }
 
-    h4.titlu {
+div.login-container h4.titlu {
     text-align: left;
-    color: #333;
+    color: #4B4B4B;
     font-family: arial,sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -46,21 +45,23 @@ div.login-container div.login-content {
 
 div.login-container form {
 	font-family: arial, sans-serif;
-	font-size: 12px;
-	color: #6A6C6F;
+	font-size: 14px;
+	color: #A5A5A5;
 	font-weight: 500;
 	text-align: left;
 	margin-top: 40px;
 
 }	
 
-div.login-container input {
+div.login-container input.email,
+div.login-container input.password {
 	width: 340px;
 	height: 30px;
 	padding-left: 7px;
 	margin-top: 5px;
-	border-radius: 1px;
+	border-radius: : solid 1px #6A6C6F;
 	opacity: 0px;
+	color: #A5A5A5;
 }
 
 div.login-container div.error {
@@ -85,7 +86,6 @@ div.login-container div.uitat-parola {
 
 div.login-container div.link-container {
 	margin-top: 35px;
-	padding-right: 300px;
 }
 
 div.login-container div.link-container a {
@@ -93,6 +93,7 @@ div.login-container div.link-container a {
 	background-color: #188AE2;
 	border-radius: 5px;
 	color: white;
+	font-family: arial;
 	font-weight: normal;
 	font-size: 14px;
 	text-decoration: none;
@@ -102,8 +103,27 @@ div.login-container div.link-container a {
 
 div.login-container div.link-container a:hover {
 	color: white;
+	font-family: arial;
 	background-color: #1576c2;
 }
+
+div.login-container div.remember-container {
+	display: inline-block;
+	width: 150px;
+	height: 20px;
+} 
+
+div.login-container p.remember-text {
+	display: inline-block;
+	margin: 3px 0 0 5px;
+	font-size: 12px;
+	color: #666;
+}
+
+div.login-container div.class{
+	float: left;
+	font-family: sans-serif;
+	position: absolute;
 
 @media only screen and (max-width: 480px) {
 	div.login-content {
@@ -127,6 +147,8 @@ div.login-container div.link-container a:hover {
 		width: 180px;
 
 	}
+
+	
 }
 
 
