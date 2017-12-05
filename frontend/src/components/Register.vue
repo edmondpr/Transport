@@ -77,23 +77,23 @@ export default {
 			    console.log(error);
 			});
   		},
-  		hideError: function() {
+  		hideError: function(e) {
   			this.error = '';
   		},
   		formValidated: function() {
-  			if (!this.nume) {
+  			if (this.nume == '') {
   				this.error = 'Nu ai introdus numele';
   				return false;
-  			} else if (!this.prenume) {
+  			} else if (this.prenume == '') {
   				this.error = 'Nu ai introdus prenumele';
   				return false;
-  			} else if (!this.email) {
+  			} else if (this.email == '') {
   				this.error = 'Nu ai introdus emailul';
   				return false;
-  			} else if (!this.parola) {
+  			} else if (this.parola == '') {
   				this.error = 'Nu ai introdus parola';
   				return false;
-  			} else if (this.parola !== this.confirma_parola) {
+  			} else if (this.parola != this.confirma_parola) {
   				this.error = 'Nu ai confirmat corect parola';
   				return false;
   			}
