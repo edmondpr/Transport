@@ -20,7 +20,7 @@
 			  	<p class="remember-text left">Tine-mă minte!</p>
 			</div>
 
-			<p v-show="error" class="error right">{{error}}</p>
+			<p v-show="error" class="error">{{error}}</p>
 			<div class="clear"></div>
 
 			<div class="submit-container right">
@@ -65,10 +65,11 @@ export default {
 					}
 				}
 				if (exists == true) {
-					console.log('utilizatorul exista');
+					self.$router.push('Bilete'); 
 				} else {
 					self.error = 'Utilizator inexistent';
 				}
+
 			}).catch(function (error) {
 			    console.log(error);
 			});
@@ -201,9 +202,8 @@ p.remember-text {
 
 p.error {
 	color: red;
-	width: 275px;
-	text-align: left;
-	margin: 5px 0 0 0;
+	text-align: center;
+	margin: 10px 0 0 0;
 }
 
 div.submit-container {
