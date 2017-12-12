@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Bilete from '@/components/Bilete'
+import Abonamente from '@/components/Abonamente'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/bilete',
       name: 'Bilete',
       component: Bilete
-    }    
+    },
+    {
+      path: '/abonamente',
+      name: 'Abonamente',
+      component: Abonamente
+    }     
   ]
 })
