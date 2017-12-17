@@ -15,7 +15,8 @@ const connection = MySQL.createConnection({
 const server = new Hapi.Server();
 server.connection({
     host: 'localhost',
-    port: 8001
+    port: 8001,
+    routes: { cors: true }
 });
 
 connection.connect();
@@ -74,7 +75,9 @@ server.route({
       const nume = request.payload.nume;
       const prenume = request.payload.prenume;
       const email = request.payload.email;
-      const query = `INSERT INTO users (nume, prenume, email) VALUES ('${nume}','${prenume}','${email}')`;
+      const telefon = request.payload.telefon;
+      const parola = request.payload.parola;
+      const query = `INSERT INTO users (nume, prenume, email, telefon, parola) VALUES ('${nume}','${prenume}','${email}','${telefon}','${parola}')`;
       connection.query(query, function (error, results, fields) {
           if (error) throw error;
           reply(results);
