@@ -5,6 +5,7 @@ import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Bilete from '@/components/Bilete'
 import Abonamente from '@/components/Abonamente'
+import DatePersonale from '@/components/DatePersonale'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/abonamente',
       name: 'Abonamente',
       component: Abonamente
-    }     
+    },
+    {
+      path: '/date-personale',
+      name: 'DatePersonale',
+      component: DatePersonale
+    }       
   ]
 })
