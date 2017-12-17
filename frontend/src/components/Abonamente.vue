@@ -5,12 +5,7 @@
 			<h2>Cumpara Abonament</h2>
 		</div>
 	
-		<div class="nav">
-			<a href="datepersonale.html" target="_self">Date Personale</a><br>
-			<a href="bilete.html" target="_self">Bilete</a><br>
-			<a href="abonamente.html" target="_self">Abonamente</a><br>
-			<a href="" target="_self">Informatii</a><br>
-		</div>
+		<left-menu></left-menu>
 
 		<div class="container-mare">	
 			<div class="credit-abonamente">
@@ -37,6 +32,8 @@
 
 <script>
 import axios from 'axios'
+import LeftMenu from './LeftMenu'
+
 
 export default {
   	name: 'Abonamente',
@@ -47,7 +44,10 @@ export default {
   	},
   	methods: {
 
-  	}
+  	},
+	components: {
+		'left-menu': LeftMenu
+	} 
 }
 </script>
 
@@ -79,33 +79,6 @@ div.header-abonamente {
 	text-align: center;
 	width: 100%;
 	margin-bottom:30px;
-}
-
-div.nav {
-	background-color: white;
-	color: #8E8F92;
-	box-shadow: 0 2px #E2E4E8;
-	margin-right: 10px;
-	width: 200px;
-	height: 100%;
-	position:fixed;
-	left:0;
-	top:0;
-	padding-top:180px;
-}
-
-div.nav a {
-	color:#739093;
-	font-size: 20px;
-	text-decoration: none;
-	margin-left:10px;
-}
-
-div.nav a:hover {
-	color:#2490E3;
-	background-color: #F6F7FA;
-	display: block;
-	padding:10px;
 }
 
 div.credit-abonamente h2 {

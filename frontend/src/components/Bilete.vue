@@ -5,38 +5,34 @@
 			<h2>Cumpara Bilet</h2>
 		</div>
 		
-			<div class="nav">
-				<a href="datepersonale.html" target="_self">Date Personale</a><br>
-				<a href="bilete.html" target="_self">Bilete</a><br>
-				<a href="abonamente.html" target="_self">Abonamente</a><br>
-				<a href="" target="_self">Informatii</a><br>
+		<left-menu></left-menu>
+
+		<div class="container-mare">	
+			<div class="credit-bilete">
+				<h2>Credit Disponibil: 600 LEI</h2>
 			</div>
+			<form>
+				Selecteaza Traseu: <br><br>
+				<input type="radio" name="traseu" value="14">14
+				<input type="radio" name="traseu" value="17">17
+				<input type="radio" name="traseu" value="18">18
+				<input type="radio" name="traseu" value="22">22
+			</form>
+			
+			<div class="cod-bilete" align="center">
 
-					<div class="container-mare">	
-						<div class="credit-bilete">
-							<h2>Credit Disponibil: 600 LEI</h2>
-						</div>
-						<form>
-							Selecteaza Traseu: <br><br>
-							<input type="radio" name="traseu" value="14">14
-							<input type="radio" name="traseu" value="17">17
-							<input type="radio" name="traseu" value="18">18
-							<input type="radio" name="traseu" value="22">22
-						</form>
-						
-						<div class="cod-bilete" align="center">
-
-							<h3>Cost Bilet: 2 LEI</h3>
-							
-							<input id="submit" type="submit" value="Cumpara Bilet" class="buton-bilete">
-						</div>
-					</div>	
+				<h3>Cost Bilet: 2 LEI</h3>
+				
+				<input id="submit" type="submit" value="Cumpara Bilet" class="buton-bilete">
+			</div>
+		</div>	
 
   	</div> 	
 </template>
 
 <script>
 import axios from 'axios'
+import LeftMenu from './LeftMenu'
 
 export default {
   	name: 'Bilete',
@@ -47,7 +43,10 @@ export default {
   	},
   	methods: {
 
-  	}
+  	},
+	components: {
+		'left-menu': LeftMenu
+	}  	
 }
 </script>
 
@@ -79,33 +78,6 @@ div.header-bilete {
 	text-align: center;
 	width: 100%;
 	margin-bottom:30px;
-}
-
-div.nav {
-	background-color: white;
-	color: #8E8F92;
-	box-shadow: 0 2px #E2E4E8;
-	margin-right: 10px;
-	width: 200px;
-	height: 100%;
-	position:fixed;
-	left:0;
-	top:0;
-	padding-top:180px;
-}
-
-div.nav a {
-	color:#739093;
-	font-size: 20px;
-	text-decoration: none;
-	margin-left:10px;
-}
-
-div.nav a:hover {
-	color:#2490E3;
-	background-color: #F6F7FA;
-	display: block;
-	padding:10px;
 }
 
 div.credit-bilete h2 {
