@@ -110,7 +110,6 @@ div.register-container {
 	background-color: #EDF0F5;
 	width: 100%;
 	height: 100%;
-	margin: -60px 0 0 -8px;
 	font-size: 14px;
 }
 
@@ -124,6 +123,7 @@ h2.titlu {
 }
 
 a {
+	cursor: pointer;
 	background-color:#188AE2;
 	border: 2px solid #188AE2;
 	border-radius: 10px;

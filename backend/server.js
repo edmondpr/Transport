@@ -48,23 +48,23 @@ server.route({
     method: 'GET',
     path: '/users/{id}',
     handler: function (request, reply) {
-    const id = request.params.id;
-    const query = 'SELECT * FROM users WHERE id = "' + id + '"';
+      const id = request.params.id;
+      const query = 'SELECT * FROM users WHERE id = "' + id + '"';
 
-    connection.query(query,
-    function (error, results, fields) {
-       if (error) throw error;
+      connection.query(query,
+      function (error, results, fields) {
+         if (error) throw error;
 
-       reply(results);
-    });
+         reply(results);
+      });
     },
-   config: {
-       validate: {
+    config: {
+      validate: {
         params: {
-        id: Joi.number().integer()
-       }
-  }
-}
+          id: Joi.number().integer()
+        }
+      }
+    }
 });
 
 server.route({
