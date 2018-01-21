@@ -132,6 +132,32 @@ server.route({
   }
 });
 
+server.route({
+    method: 'GET',
+    path: '/credit',
+    handler: function (request, reply) {
+      let token = request.headers.authorization;
+
+      const query = 'SELECT id FROM users WHERE token = "' + token + '"';
+
+      connection.query(query,
+      function (error, results, fields) {
+        if (error) throw error;
+
+        let userId = results[0].id;
+        const query = 'SELECT credit FROM credit WHERE user_id = "' + userId + '"';
+
+        connection.query(query,
+        function (error, results, fields) {
+           if (error) throw error;
+
+           reply(results[0].credit);
+        });        
+      });
+      
+    }
+});
+
 server.start((err) => {
    if (err) {
      throw err;
