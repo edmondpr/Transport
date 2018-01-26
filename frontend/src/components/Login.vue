@@ -4,16 +4,16 @@
 			<h2 class="titlu">Intră în cont:</h2>
 
 			<span class="login-input-label left">Email:</span>
-			<input v-model="email" @keyup="hideError" class="login-input right" type="email" name="mail" placeholder="Ex: vasilica-dulcika91@yahoo.com"> 
+			<input v-model="email" @keyup="hideError" class="login-input right" type="email" placeholder="Ex: vasilica-dulcika91@yahoo.com">
 			<div class="clear"></div>
 
 			<span class="login-input-label left">Parolă:</span>
-			<input v-model="parola" @keyup="hideError" class="login-input right" type="password" name="password" placeholder="Alege ceva greu de ghicit!">
+			<input v-model="parola" @keyup="hideError" class="login-input right" type="password" placeholder="Alege ceva greu de ghicit!">
 			<div class="clear"></div>
 
 			<div class="uitat-parola">
 				<a href="email.html">Am Uitat Parola</a>
-			</div> 
+			</div>
 
 			<div class="remember-container">
 			 	<input type="checkbox" class="remember-checkbox left"/>
@@ -24,12 +24,12 @@
 			<div class="clear"></div>
 
 			<div class="submit-container right">
-			    <a class="login" v-on:click="login">Login</a> 
-			</div>  
+			    <a class="login" v-on:click="login">Login</a>
+			</div>
 			<div class="clear"></div>
-		
+
 	  	</form>
-	</div>  	
+	</div>
 </template>
 
 <script>
@@ -51,27 +51,21 @@ export default {
   				return;
   			}
 			axios({
-			    method: 'GET',
-			    url: 'http://localhost:8001/users',
-			    crossDomain: true
+			    method: 'POST',
+			    url: 'http://localhost:8001/login',
+			    crossDomain: true,
+          data:{
+            email: this.email,
+            parola: this.parola
+          }
 			}).then(function(response) {
-				var i;
-				var exists = false;				
-				for (i = 0; i < response.data.length; i++) {
-					var user = response.data[i];
-					if (self.email == user.email && self.parola == user.parola) {
-						exists = true;
-						break;
-					}
-				}
-				if (exists == true) {
-					self.$router.push('Bilete'); 
-				} else {
-					self.error = 'Utilizator inexistent';
-				}
-
+        if (response.data) {
+					self.$router.push('Bilete');
+        } else {
+          self.error = 'Utilizator inexistent';
+        }
 			}).catch(function (error) {
-			    console.log(error);
+
 			});
   		},
   		hideError: function(e) {
@@ -84,7 +78,7 @@ export default {
   			} else if (this.parola == '') {
   				this.error = 'Nu ai introdus parola';
   				return false;
-  			} 
+  			}
   			return true;
   		}
   	}
@@ -117,7 +111,7 @@ a.login {
 	border-radius: 10px;
 	color: white;
 	padding: 10px 20px;
-	text-decoration: none; 
+	text-decoration: none;
 }
 
 a:hover {
@@ -143,7 +137,7 @@ form.login-form {
 span.login-input-label {
 	display: inline-block;
 	width: 130px;
-	padding-top: 5px;	
+	padding-top: 5px;
 	text-align: right;
 }
 
@@ -191,7 +185,7 @@ div.remember-container {
 	display: inline-block;
 	width: 150px;
 	height: 20px;
-} 
+}
 
 p.remember-text {
 	display: inline-block;
@@ -216,7 +210,7 @@ div.submit-container {
     form.login-form {
     	width: 100%;
     	left: 0;
-    }	
+    }
 
     input {
     	width: 210px;
