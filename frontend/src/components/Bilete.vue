@@ -9,7 +9,7 @@
 
 		<div class="container-mare">	
 			<div class="credit-bilete">
-				<h2>Credit Disponibil: 600 LEI</h2>
+				<h2>Credit Disponibil: {{ credit }} LEI</h2>
 			</div>
 			<form>
 				Selecteaza Traseu: <br><br>
@@ -31,19 +31,42 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import VueCookie from 'vue-cookie'
 import axios from 'axios'
 import LeftMenu from './LeftMenu'
+
+// Tell Vue to use the plugin
+Vue.use(VueCookie);
 
 export default {
   	name: 'Bilete',
   	data () {
 		return {
-
+			credit: ''
 		}
   	},
-  	methods: {
-
+  	methods: {	
+  		getCredit() {
+  			var self = this;
+			let token = this.$cookie.get('access_token');		
+			axios({
+			    method: 'GET',
+			    url: 'http://localhost:8001/credit',
+			    crossDomain: true,
+			    headers: { 
+			    	authorization: token 
+			    }
+			}).then(function(response) {
+				self.credit = response.data;
+			}).catch(function (error) {
+			    console.log(error);
+			});
+		}	
   	},
+	mounted: function() { 
+		this.getCredit();
+	},  	
 	components: {
 		'left-menu': LeftMenu
 	}  	

@@ -28,23 +28,23 @@ server.route({
     method: 'GET',
     path: '/users/{id}',
     handler: function (request, reply) {
-    const id = request.params.id;
-    const query = 'SELECT * FROM users WHERE id = "' + id + '"';
+      const id = request.params.id;
+      const query = 'SELECT * FROM users WHERE id = "' + id + '"';
 
-    connection.query(query,
-    function (error, results, fields) {
-       if (error) throw error;
+      connection.query(query,
+      function (error, results, fields) {
+         if (error) throw error;
 
-       reply(results);
-    });
+         reply(results);
+      });
     },
-   config: {
-       validate: {
+    config: {
+      validate: {
         params: {
-        id: Joi.number().integer()
-       }
-  }
-}
+          id: Joi.number().integer()
+        }
+      }
+    }
 });
 
 server.route({
@@ -110,6 +110,32 @@ server.route({
          }
       }
   }
+});
+
+server.route({
+    method: 'GET',
+    path: '/credit',
+    handler: function (request, reply) {
+      let token = request.headers.authorization;
+
+      const query = 'SELECT id FROM users WHERE token = "' + token + '"';
+
+      connection.query(query,
+      function (error, results, fields) {
+        if (error) throw error;
+
+        let userId = results[0].id;
+        const query = 'SELECT credit FROM credit WHERE user_id = "' + userId + '"';
+
+        connection.query(query,
+        function (error, results, fields) {
+           if (error) throw error;
+
+           reply(results[0].credit);
+        });        
+      });
+      
+    }
 });
 
 server.start((err) => {
