@@ -34,6 +34,11 @@
 
 <script>
 import axios from 'axios'
+import Vue from 'vue'
+import VueCookie from 'vue-cookie'
+
+// Tell Vue to use the plugin
+Vue.use(VueCookie);
 
 export default {
   	name: 'Login',
@@ -54,18 +59,19 @@ export default {
 			    method: 'POST',
 			    url: 'http://localhost:8001/login',
 			    crossDomain: true,
-          data:{
-            email: this.email,
-            parola: this.parola
-          }
+		        data:{
+		            email: this.email,
+		            parola: this.parola
+		        }
 			}).then(function(response) {
-        if (response.data) {
+		        if (response.data) {
+		        	self.$cookie.set('access_token', response.data);
 					self.$router.push('Bilete');
-        } else {
-          self.error = 'Utilizator inexistent';
-        }
+		        } else {
+		          	self.error = 'Utilizator inexistent';
+		        }
 			}).catch(function (error) {
-
+				console.log(error);
 			});
   		},
   		hideError: function(e) {
