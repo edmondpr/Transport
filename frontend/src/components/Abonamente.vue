@@ -4,50 +4,65 @@
    		<div class="header-abonamente">
 			<h2>Cumpara Abonament</h2>
 		</div>
-	
+
 		<left-menu></left-menu>
 
-		<div class="container-mare">	
-			<div class="credit-abonamente">
-				<h2>Credit Disponibil: 600 LEI</h2>
-			</div>
+		<div class="container-mare">
+			<Credit></Credit>
 			<form>
 				Selecteaza Traseu: <br><br>
-				<input type="radio" name="traseu" value="14">14
-				<input type="radio" name="traseu" value="17">17
-				<input type="radio" name="traseu" value="18">18
-				<input type="radio" name="traseu" value="22">22
+				<input type="radio" name="traseu" value="14" v-model="traseu">14
+				<input type="radio" name="traseu" value="17" v-model="traseu">17
+				<input type="radio" name="traseu" value="18" v-model="traseu">18
+				<input type="radio" name="traseu" value="22" v-model="traseu">22
 			</form>
-			
+
 			<div class="cod-abonamente" align="center">
 
-				<h3>Cost Abonament: 2 LEI</h3>
-				
-				<input id="submit" type="submit" value="Cumpara Abonament" class="buton-abonamente">
-			</div>
-		</div>	
+				<h3>Cost Abonament: 60 LEI</h3>
 
-  	</div> 	
+				<input id="submit" type="submit" value="Cumpara Abonament" class="buton-abonamente" v-on:click="doBuy">
+			</div>
+		</div>
+
+  	</div>
 </template>
 
 <script>
 import axios from 'axios'
+import { mapGetters } from 'vuex'
 import LeftMenu from './LeftMenu'
+import Credit from './Credit'
 
 
 export default {
   	name: 'Abonamente',
   	data () {
-		return {
-
-		}
+		    return {
+          traseu: ''
+		    }
   	},
-  	methods: {
-
+    methods: {
+      doBuy(){
+        const price = 60;
+        let token = this.$cookie.get('access_token');
+        axios({method:'POST',
+          url: 'http://localhost:8001/abonamente',
+          crossDomain: true,
+          headers: {
+			    	authorization: token
+			    },
+          data: {
+              traseu: this.traseu,
+              price: price
+          }
+        });
+      }
   	},
-	components: {
-		'left-menu': LeftMenu
-	} 
+	  components: {
+		    'LeftMenu': LeftMenu,
+		    'Credit': Credit
+	     }
 }
 </script>
 
@@ -91,7 +106,7 @@ form {
 	font-size: 25px;
 }
 
-form input { 
+form input {
 	border-radius: 8px;
 	padding: 5px;
 	margin: 10px 0 10px 0;

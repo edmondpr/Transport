@@ -12,31 +12,31 @@
 			<div class="clear"></div>
 
 			<span class="register-input-label left">Email:</span>
-			<input v-model="email" @keyup="hideError" class="register-input right" type="email" name="mail" placeholder="Ex: vasilica-dulcika91@yahoo.com"> 
+			<input v-model="email" @keyup="hideError" class="register-input right" type="email" name="mail" placeholder="Ex: vasilica-dulcika91@yahoo.com">
 			<div class="clear"></div>
 
 			<span class="register-input-label left">Telefon:</span>
-			<input v-model="telefon" @keyup="hideError" class="register-input right" type="text" name="telefon" placeholder="Ex: 07XX-XXX-XXX"> 
+			<input v-model="telefon" @keyup="hideError" class="register-input right" type="text" name="telefon" placeholder="Ex: 07XX-XXX-XXX">
 			<div class="clear"></div>
 
 			<span class="register-input-label left">Parolă:</span>
 			<input v-model="parola" @keyup="hideError" class="register-input right" type="password" name="password" placeholder="Alege ceva greu de ghicit!">
-			<div class="clear"></div> 
+			<div class="clear"></div>
 
 			<span class="register-input-label left">Confirmare parolă:</span>
-			<input v-model="confirma_parola" @keyup="hideError" class="register-input right" type="password" name="password" placeholder="Încă o dată pentru siguranță!"> 
+			<input v-model="confirma_parola" @keyup="hideError" class="register-input right" type="password" name="password" placeholder="Încă o dată pentru siguranță!">
 			<div class="clear"></div>
 
 			<p v-show="error" class="error right">{{error}}</p>
 			<div class="clear"></div>
 
 			<div class="submit-container right">
-			  <a v-on:click="submit">TRIMITE!</a> 
-			</div>  
+			  <a v-on:click="submit">TRIMITE!</a>
+			</div>
 			<div class="clear"></div>
-		
+
 	  	</form>
-	</div>  	
+	</div>
 </template>
 
 <script>
@@ -65,12 +65,12 @@ export default {
 			    url: 'http://localhost:8001/users',
 			    crossDomain: true,
 			    data: {
-				   nume: this.nume,
-				   prenume: this.prenume,
-				   email: this.email,
-				   telefon: this.telefon,
-				   parola: this.parola
-				}
+    				   nume: this.nume,
+    				   prenume: this.prenume,
+    				   email: this.email,
+    				   telefon: this.telefon,
+    				   parola: this.parola
+				     }
 			}).then(function(response) {
 			    console.log(response);
 			}).catch(function (error) {
@@ -129,7 +129,7 @@ a {
 	border-radius: 10px;
 	color: white;
 	padding: 10px 20px;
-	text-decoration: none; 
+	text-decoration: none;
 }
 
 a:hover {
@@ -155,7 +155,7 @@ form.register-form {
 span.register-input-label {
 	display: inline-block;
 	width: 160px;
-	padding-top: 5px;	
+	padding-top: 5px;
 	text-align: right;
 }
 
@@ -183,7 +183,7 @@ div.submit-container {
     form.register-form {
     	width: 100%;
     	left: 0;
-    }	
+    }
 
     input {
     	width: 210px;

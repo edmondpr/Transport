@@ -4,10 +4,10 @@
    		<div class="header-bilete">
 			<h2>Cumpara Bilet</h2>
 		</div>
-		
+
 		<left-menu></left-menu>
 
-		<div class="container-mare">	
+		<div class="container-mare">
 			<div class="credit-bilete">
 				<h2>Credit Disponibil: {{ credit }} LEI</h2>
 			</div>
@@ -18,16 +18,16 @@
 				<input type="radio" name="traseu" value="18">18
 				<input type="radio" name="traseu" value="22">22
 			</form>
-			
+
 			<div class="cod-bilete" align="center">
 
 				<h3>Cost Bilet: 2 LEI</h3>
-				
+
 				<input id="submit" type="submit" value="Cumpara Bilet" class="buton-bilete">
 			</div>
-		</div>	
+		</div>
 
-  	</div> 	
+  	</div>
 </template>
 
 <script>
@@ -42,34 +42,34 @@ Vue.use(VueCookie);
 export default {
   	name: 'Bilete',
   	data () {
-		return {
-			credit: ''
-		}
+		    return {
+			       credit: ''
+		         }
   	},
-  	methods: {	
+  	methods: {
   		getCredit() {
   			var self = this;
-			let token = this.$cookie.get('access_token');		
+			let token = this.$cookie.get('access_token');
 			axios({
 			    method: 'GET',
 			    url: 'http://localhost:8001/credit',
 			    crossDomain: true,
-			    headers: { 
-			    	authorization: token 
+			    headers: {
+			    	authorization: token
 			    }
 			}).then(function(response) {
 				self.credit = response.data;
 			}).catch(function (error) {
 			    console.log(error);
 			});
-		}	
+		}
   	},
-	mounted: function() { 
+	mounted: function() {
 		this.getCredit();
-	},  	
+	},
 	components: {
 		'left-menu': LeftMenu
-	}  	
+	}
 }
 </script>
 
@@ -113,7 +113,7 @@ form {
 	font-size: 25px;
 }
 
-form input { 
+form input {
 	border-radius: 8px;
 	padding: 5px;
 	margin: 10px 0 10px 0;

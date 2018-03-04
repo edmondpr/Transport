@@ -117,6 +117,7 @@ server.route({
     path: '/credit',
     handler: function (request, reply) {
       let token = request.headers.authorization;
+      console.log(token);
 
       const query = 'SELECT id FROM users WHERE token = "' + token + '"';
 
@@ -125,16 +126,47 @@ server.route({
         if (error) throw error;
 
         let userId = results[0].id;
+        console.log(userId);
         const query = 'SELECT credit FROM credit WHERE user_id = "' + userId + '"';
-
+        console.log(query);
         connection.query(query,
-        function (error, results, fields) {
+        function (error, result, fields) {
            if (error) throw error;
-
-           reply(results[0].credit);
-        });        
+           console.log(result[0].credit);
+           reply(result[0].credit);
+        });
       });
-      
+
+    }
+});
+
+server.route({
+    method: 'POST',
+    path: '/abonamente',
+    handler: function (request, reply) {
+      let token = request.headers.authorization;
+      let traseu = request.payload.traseu;
+      let date = new Date();
+      date = date.getTime();
+
+      const query = 'SELECT id FROM users WHERE token = "' + token + '"';
+
+      connection.query(query,
+      function (error, results, fields) {
+        if (error) throw error;
+
+        let userId = results[0].id;
+        console.log(userId);
+        const query = `INSERT INTO abonamente (traseu, data_ora, user_id) VALUES ('${traseu}', '${date}', '${userId}')`;
+        console.log(query);
+        connection.query(query,
+        function (error, result, fields) {
+           if (error) throw error;
+           console.log(result);
+           //reply(result[0].credit);
+        });
+      });
+
     }
 });
 
