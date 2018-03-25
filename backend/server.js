@@ -141,6 +141,18 @@ server.route({
 });
 
 server.route({
+  method: 'PUT',
+  path: '/credit',
+  handler: function(request, reply){
+    let token = request.headers.authorization;
+    const credit = request.headers.credit;
+    const price = request.headers.price;
+
+    //const query = `UPDATE credit SET credit='${}'`
+  }
+});
+
+server.route({
     method: 'POST',
     path: '/abonamente',
     handler: function (request, reply) {

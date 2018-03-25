@@ -1,42 +1,46 @@
 <template>
 			<div class="credit">
-        <h2>Credit Disponibil: {{ credit }} LEI</h2>
+				<h2>Credit Disponibil: {{ credit }} LEI</h2>
 			</div>
 </template>
 
 <script>
 import axios from 'axios'
 import LeftMenu from './LeftMenu'
+import { mapGetters, mapActions } from 'vuex';
 
 
 export default {
-  	name: 'Credit',
-  	data () {
-		    return {
-          credit: ''
-		      }
-  	},
-    methods: {
-  		 getCredit() {
-    		var self = this;
-  			let token = this.$cookie.get('access_token');
-  			axios({
-  			    method: 'GET',
-  			    url: 'http://localhost:8001/credit',
-  			    crossDomain: true,
-  			    headers: {
-  			    	authorization: token
-  			    }
-  			}).then(function(response) {
-  				self.credit = response.data;
-  			}).catch(function (error) {
-  			    console.log(error);
-  			});
-  		}
-  	},
-    mounted: function() {
-		    this.getCredit();
-	  }
+		name: 'Credit',
+		data () {
+				return {
+				}
+		},
+		methods: {
+			...mapActions(['setCredit']),
+			getCredit() {
+				var self = this;
+				let token = this.$cookie.get('access_token');
+				axios({
+						method: 'GET',
+						url: 'http://localhost:8001/credit',
+						crossDomain: true,
+						headers: {
+							authorization: token
+						}
+				}).then(function(response) {
+					self.setCredit(response.data);
+				}).catch(function (error) {
+						console.log(error);
+				});
+			}
+		},
+		mounted: function() {
+				this.getCredit();
+		},
+		computed: mapGetters({
+    	credit: 'getCredit',
+  	})
 }
 </script>
 
