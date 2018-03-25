@@ -29,7 +29,7 @@ server.route({
     path: '/users/{id}',
     handler: function (request, reply) {
       const id = request.params.id;
-      const query = 'SELECT * FROM users WHERE id = "' + id + '"';
+      const query = `SELECT * FROM users WHERE id = '${id}'`;
 
       connection.query(query,
       function (error, results, fields) {
@@ -112,6 +112,8 @@ server.route({
   }
 });
 
+
+
 server.route({
     method: 'GET',
     path: '/credit',
@@ -119,24 +121,16 @@ server.route({
       let token = request.headers.authorization;
       console.log(token);
 
-      const query = 'SELECT id FROM users WHERE token = "' + token + '"';
-
-      connection.query(query,
-      function (error, results, fields) {
-        if (error) throw error;
-
-        let userId = results[0].id;
-        console.log(userId);
-        const query = 'SELECT credit FROM credit WHERE user_id = "' + userId + '"';
-        console.log(query);
+      let getCredit = function(userId){
+        const query = `SELECT credit FROM credit WHERE user_id = '${userId}'`;
         connection.query(query,
         function (error, result, fields) {
            if (error) throw error;
-           console.log(result[0].credit);
            reply(result[0].credit);
         });
-      });
+      }
 
+      selectUserIdByToken(token, getCredit);
     }
 });
 
@@ -158,29 +152,47 @@ server.route({
     handler: function (request, reply) {
       let token = request.headers.authorization;
       let traseu = request.payload.traseu;
+      let price = request.payload.price;
       let date = new Date();
       date = date.getTime();
 
-      const query = 'SELECT id FROM users WHERE token = "' + token + '"';
-
-      connection.query(query,
-      function (error, results, fields) {
-        if (error) throw error;
-
-        let userId = results[0].id;
-        console.log(userId);
+      let adaugaAbonament = function(userId){
         const query = `INSERT INTO abonamente (traseu, data_ora, user_id) VALUES ('${traseu}', '${date}', '${userId}')`;
-        console.log(query);
         connection.query(query,
         function (error, result, fields) {
            if (error) throw error;
-           console.log(result);
-           //reply(result[0].credit);
+            updateCredit(userId, price, reply);
         });
-      });
-
+      }
+      selectUserIdByToken(token, adaugaAbonament);    
     }
 });
+
+function selectUserIdByToken(token, callback){
+  const query = `SELECT id FROM users WHERE token = '${token}'`;
+
+  connection.query(query,
+  function (error, results, fields) {
+    if (error) throw error;
+    callback(results[0].id);
+  });
+}
+
+function updateCredit(userId, price, reply){
+  const query = `SELECT credit FROM credit WHERE user_id ='${userId}'`;
+  connection.query(query,
+  function (error, result, fields) {
+    if (error) throw error;
+    let credit = result[0].credit;
+    credit -= price;
+    const query = `UPDATE credit SET credit='${credit}' WHERE user_id ='${userId}'`;
+    connection.query(query,
+    function (error, result, fields) {
+      if (error) throw error;
+      reply(result);
+    });  
+  });  
+}
 
 server.start((err) => {
    if (err) {

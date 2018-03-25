@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import axios from 'axios'
 import LeftMenu from './LeftMenu'
-import { mapGetters, mapActions } from 'vuex';
+import { getCreditApi } from '../scripts/api'
+import { mapGetters, mapActions } from 'vuex'
 
 
 export default {
@@ -17,29 +17,14 @@ export default {
 				}
 		},
 		methods: {
-			...mapActions(['setCredit']),
-			getCredit() {
-				var self = this;
-				let token = this.$cookie.get('access_token');
-				axios({
-						method: 'GET',
-						url: 'http://localhost:8001/credit',
-						crossDomain: true,
-						headers: {
-							authorization: token
-						}
-				}).then(function(response) {
-					self.setCredit(response.data);
-				}).catch(function (error) {
-						console.log(error);
-				});
-			}
+			...mapActions(['setCredit'])
 		},
 		mounted: function() {
-				this.getCredit();
+				let token = this.$cookie.get('access_token');
+				getCreditApi(this.setCredit, token)
 		},
 		computed: mapGetters({
-    	credit: 'getCredit',
+    	credit: 'getCredit'
   	})
 }
 </script>

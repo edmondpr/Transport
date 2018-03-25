@@ -1,7 +1,7 @@
 <template>
-   	<div class="abonamente-container">
+ 	<div class="abonamente-container">
 
-   		<div class="header-abonamente">
+ 		<div class="header-abonamente">
 			<h2>Cumpara Abonament</h2>
 		</div>
 
@@ -19,50 +19,54 @@
 
 			<div class="cod-abonamente" align="center">
 
-				<h3>Cost Abonament: 60 LEI</h3>
+				<h3>Cost Abonament: {{ price }} LEI</h3>
 
 				<input id="submit" type="submit" value="Cumpara Abonament" class="buton-abonamente" v-on:click="doBuy">
 			</div>
 		</div>
-
-  	</div>
+	</div>
 </template>
 
 <script>
 import axios from 'axios'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
+import { getCreditApi } from '../scripts/api'
 import LeftMenu from './LeftMenu'
 import Credit from './Credit'
 
 
 export default {
-  	name: 'Abonamente',
-  	data () {
-		    return {
-          traseu: ''
-		    }
-  	},
-    methods: {
-      doBuy(){
-        const price = 60;
-        let token = this.$cookie.get('access_token');
-        axios({method:'POST',
-          url: 'http://localhost:8001/abonamente',
-          crossDomain: true,
-          headers: {
-			    	authorization: token
-			    },
-          data: {
-              traseu: this.traseu,
-              price: price
-          }
-        });
-      }
-  	},
-	  components: {
-		    'LeftMenu': LeftMenu,
-		    'Credit': Credit
-	     }
+	name: 'Abonamente',
+	data () {
+	  return {
+			traseu: '',
+			price: 60
+	  }
+	},
+	methods: {
+		...mapActions(['setCredit']),
+	  doBuy(){
+	  	let self = this;
+	    let token = this.$cookie.get('access_token');
+	    axios({method:'POST',
+	      url: 'http://localhost:8001/abonamente',
+	      crossDomain: true,
+	      headers: {
+		    	authorization: token
+		    },
+	      data: {
+          traseu: this.traseu,
+          price: this.price
+	      }
+	    }).then(function(response){
+	    	getCreditApi(self.setCredit, token);
+	    });
+	  }
+	},
+	components: {
+	  'LeftMenu': LeftMenu,
+	  'Credit': Credit
+	}
 }
 </script>
 
